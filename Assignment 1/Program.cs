@@ -11,11 +11,18 @@ namespace Assignment_1
             string SampleString = Console.ReadLine();
             
             Console.WriteLine("type \"y\" to choose amount of spaces");
-            short amountOfSpaces = 3;
+            short amountOfSpaces = 0;
             if (Console.ReadLine() == "y")
             {
             Console.WriteLine("how many spaces would you like?");
-            Int16.TryParse(Console.ReadLine(), out amountOfSpaces);
+            if(Int16.TryParse(Console.ReadLine(), out amountOfSpaces))
+                {
+
+                }
+                else
+                {
+                    amountOfSpaces = 3;
+                }
             }
 
             Console.WriteLine("press \"y\" to pick character type");
@@ -39,7 +46,7 @@ namespace Assignment_1
         {
             string fillerString = DefinedSpaces(amount,ChooseCorrectCharacter(characterType));
             
-            string[] spacedStrings = new string[3];
+            string[] spacedStrings = new string[2];
             
             char[] charString = SampleString.ToCharArray();
             string JoinString = string.Join(fillerString, charString);
